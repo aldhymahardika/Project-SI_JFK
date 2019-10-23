@@ -19,10 +19,11 @@ class UsulanController extends Controller
         return view('usulan_tambah');
     }
 
-    public function detail()
+    public function detail($id)
     {
-        $usulan = Usulan::all();
-        return view('detail_usulan', ['usulan' => $usulan]);
+        $usulan = Usulan::find($id);
+        $peserta = Peserta::find($id);
+        return view('detail_usulan', ['usulan', 'peserta' => $usulan, $peserta]);
     }
 
     public function simpan(Request $request)

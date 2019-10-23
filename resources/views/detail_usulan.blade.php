@@ -17,63 +17,91 @@
                     <br/>
                     <br/>
 
-                    <form method="post" action="/usulan/store">
+                    <form method="get" action="/usulan/store/{{$usulan->id}}">
 
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                            <label>No. Surat</label>
-                            <input type="text" name="no_surat" class="form-control" placeholder="No. Surat .."></input>
-
-                            @if($errors->has('no_surat'))
-                                <div class="text-danger">
-                                    {{ $errors->first('no_surat')}}
-                                </div>
-                            @endif
+                            <label>No. Surat &emsp; :</label>
+                            <label>{{$usulan->no_surat}}</label>
 
                         </div>
 
                         <div class="form-group">
-                            <label>Tanggal</label>
-                            <input  type="text" name="tanggal" class="form-control" placeholder="Tanggal  .."></input>
-
-                             @if($errors->has('tanggal'))
-                                <div class="text-danger">
-                                    {{ $errors->first('tanggal')}}
-                                </div>
-                            @endif
+                            <label>Tanggal &emsp;&emsp; :</label>
+                            <label>{{$usulan->tanggal}}</label>
 
                         </div>
 
                         <div class="form-group">
-                            <label>Perihal</label>
-                            <input type="text" name="perihal" class="form-control" placeholder="Perihal .."></input>
-
-                             @if($errors->has('perihal'))
-                                <div class="text-danger">
-                                    {{ $errors->first('perihal')}}
-                                </div>
-                            @endif
+                            <label>Perihal &emsp;&emsp; :</label>
+                            <label>{{$usulan->perihal}}</label>
 
                         </div>
 
                         <div class="form-group">
-                            <label>File Surat</label>
-                            <input type="text" name="file_surat" class="form-control" placeholder="File Surat .."></input>
-
-                             @if($errors->has('file_surat'))
-                                <div class="text-danger">
-                                    {{ $errors->first('file_surat')}}
-                                </div>
-                            @endif
-                            <a href="/usulan" class="btn btn-primary">Cari</a>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="Simpan">
+                            <label>File Surat &emsp; :</label>
+                            <label>{{$usulan->file_surat}}</label>
+                            
                         </div>
 
                     </form>
+                    <br/>
+                    <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>NIP</th>
+                    <th>Nama</th>
+                    <th>TMT</th>
+                    <th>SK CPNS</th>
+                    <th>SK PNS</th>
+                    <th>Pangkat</th>
+                    <th>SK KP Terakhir</th>
+                    <th>Unit Kerja</th>
+                    <th>Pendidikan Terakhir</th>
+                    <th>Ijazah</th>
+                    <th>Jabatan</th>
+                    <th>Jenis Pelatihan</th>
+                    <th>Jenis Usulan Formasi</th>
+                    <th>Email</th>
+                    <th>No. Telp</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @php
+                    $no = 1;
+                @endphp
+                @foreach($peserta as $p)
+                <tr>
+                    <td>{{ $no }}</td>
+                    <td>{{ $p->nip }}</td>
+                    <td>{{ $p->nama }}</td>
+                    <td>{{ $p->tmt }}</td>
+                    <td>{{ $p->sk_cpns }}</td>
+                    <td>{{ $p->sk_pns }}</td>
+                    <td>{{ $p->pangkat }}</td>
+                    <td>{{ $p->sk_kp }}</td>
+                    <td>{{ $p->unit_kerja }}</td>
+                    <td>{{ $p->pendidikan }}</td>
+                    <td>{{ $p->ijazah }}</td>
+                    <td>{{ $p->jabatan }}</td>
+                    <td>{{ $p->jenis_pelatihan }}</td>
+                    <td>{{ $p->jenis_usulan }}</td>
+                    <td>{{ $p->email }}</td>
+                    <td>{{ $p->no_telp }}</td>
+                    <td>
+                        <a href="/peserta/edit/{{$p->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/peserta/hapus/{{$p->id}}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                @php
+                    $no++;
+                @endphp
+                @endforeach
+            </tbody>
+        </table>
                 </div>
             </div>
         </div>

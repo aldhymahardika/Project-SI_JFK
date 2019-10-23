@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/usulan', 'UsulanController@index');
 Route::get('/usulan/tambah', 'UsulanController@usulan');
 Route::post('/usulan/store', 'UsulanController@simpan');
-Route::get('/usulan/detail', 'UsulanController@detail');;
+Route::get('/usulan/detail/{id}', 'UsulanController@detail');;
 Route::get('/peserta/tambah', 'UsulanController@tambah');
 Route::post('/peserta/store', 'UsulanController@store');
 Route::get('/peserta/edit/{id}', 'UsulanController@edit');
