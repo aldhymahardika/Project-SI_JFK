@@ -16,8 +16,8 @@
                     <a href="/usulan" class="btn btn-primary">Kembali</a>
                     <br/>
                     <br/>
-                    
-                    <form method="post" action="/peserta/edit/{{$peserta->id}}">
+
+                    <form method="post" action="/peserta/update/{{$peserta->id}}">
 
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
@@ -26,18 +26,18 @@
                             <label>NIP</label>
                             <input type="text" name="nip" class="form-control" placeholder="NIP .." value="{{ $peserta->nip }}">
 
-                            @if($errors->has('nip'))
+                            <!-- @if($errors->has('nip'))
                                 <div class="text-danger">
                                     {{ $errors->first('nip')}}
                                 </div>
                             @endif
-                            <a href="/usulan" class="btn btn-primary">Cari</a>
+                            <a href="/usulan" class="btn btn-primary">Cari</a> -->
 
                         </div>
 
                         <div class="form-group">
                             <label>Nama</label>
-                            <textarea name="nama" class="form-control" placeholder="Nama  .." value="{{ $peserta->nama }}"></textarea>
+                            <input name="nama" class="form-control" placeholder="Nama  .." value="{{ $peserta->nama }}"></input>
 
                              @if($errors->has('nama'))
                                 <div class="text-danger">
@@ -49,7 +49,7 @@
 
                         <div class="form-group">
                             <label>TMT</label>
-                            <textarea name="tmt" class="form-control" placeholder="tmt .." value="{{ $peserta->tmt }}"></textarea>
+                            <input name="tmt" class="form-control" placeholder="tmt .." value="{{ $peserta->tmt }}"></input>
 
                              @if($errors->has('tmt'))
                                 <div class="text-danger">
@@ -61,7 +61,7 @@
 
                         <div class="form-group">
                             <label>Sk CPNS</label>
-                            <textarea name="sk_cpns" class="form-control" placeholder="SK CPNS .." value="{{ $peserta->sk_cpns }}"></textarea>
+                            <input name="sk_cpns" class="form-control" placeholder="SK CPNS .." value="{{ $peserta->sk_cpns }}"></input>
 
                              @if($errors->has('sk_cpns'))
                                 <div class="text-danger">
@@ -73,7 +73,7 @@
 
                         <div class="form-group">
                             <label>SK PNS</label>
-                            <textarea name="sk_pns" class="form-control" placeholder="SK PNS .." value="{{ $peserta->sk_pns }}"></textarea>
+                            <input name="sk_pns" class="form-control" placeholder="SK PNS .." value="{{ $peserta->sk_pns }}"></input>
 
                              @if($errors->has('sk_pns'))
                                 <div class="text-danger">
@@ -85,7 +85,7 @@
 
                         <div class="form-group">
                             <label>Pangkat</label>
-                            <textarea name="pangkat" class="form-control" placeholder="Pangkat  .." value="{{ $peserta->pangkat }}"></textarea>
+                            <input name="pangkat" class="form-control" placeholder="Pangkat  .." value="{{ $peserta->pangkat }}"></input>
 
                              @if($errors->has('pangkat'))
                                 <div class="text-danger">
@@ -97,7 +97,7 @@
 
                         <div class="form-group">
                             <label>SK KP Terakhir</label>
-                            <textarea name="sk_kp" class="form-control" placeholder="SK KP Terakhir .." value="{{ $peserta->sk_kp }}"></textarea>
+                            <input name="sk_kp" class="form-control" placeholder="SK KP Terakhir .." value="{{ $peserta->sk_kp }}"></input>
 
                              @if($errors->has('sk_kp'))
                                 <div class="text-danger">
@@ -109,7 +109,7 @@
 
                         <div class="form-group">
                             <label>Unit Kerja</label>
-                            <textarea name="unit_kerja" class="form-control" placeholder="Unit Kerja .." value="{{ $peserta->unit_kerja }}"></textarea>
+                            <input name="unit_kerja" class="form-control" placeholder="Unit Kerja .." value="{{ $peserta->unit_kerja }}"></input>
 
                              @if($errors->has('unit_kerja'))
                                 <div class="text-danger">
@@ -121,7 +121,7 @@
 
                         <div class="form-group">
                             <label>Pendidikan Terakhir</label>
-                            <textarea name="pendidikan" class="form-control" placeholder="Pendidikan Terakhir .." value="{{ $peserta->pendidikan }}" ></textarea>
+                            <input name="pendidikan" class="form-control" placeholder="Pendidikan Terakhir .." value="{{ $peserta->pendidikan }}" ></input>
 
                              @if($errors->has('pendidikan'))
                                 <div class="text-danger">
@@ -133,7 +133,7 @@
 
                         <div class="form-group">
                             <label>Ijazah</label>
-                            <textarea name="ijazah" class="form-control" placeholder="Ijazah .." value="{{ $peserta->ijazah }}"></textarea>
+                            <input name="ijazah" class="form-control" placeholder="Ijazah .." value="{{ $peserta->ijazah }}"></input>
 
                              @if($errors->has('ijazah'))
                                 <div class="text-danger">
@@ -145,7 +145,7 @@
 
                         <div class="form-group">
                             <label>Jabatan</label>
-                            <textarea name="jabatan" class="form-control" placeholder="Jabatan .." value="{{ $peserta->jabatan }}"></textarea>
+                            <input name="jabatan" class="form-control" placeholder="Jabatan .." value="{{ $peserta->jabatan }}"></input>
 
                              @if($errors->has('jabatan'))
                                 <div class="text-danger">
@@ -157,7 +157,7 @@
 
                         <div class="form-group">
                             <label>Jenis Pelatihan</label>
-                            <textarea name="jenis_pelatihan" class="form-control" placeholder="Jenis Pelatihan .." value="{{ $peserta->jenis_pelatihan }}"></textarea>
+                            <input name="jenis_pelatihan" class="form-control" placeholder="Jenis Pelatihan .." value="{{ $peserta->jenis_pelatihan }}"></input>
 
                              @if($errors->has('jenis_pelathihan'))
                                 <div class="text-danger">
@@ -169,7 +169,7 @@
 
                         <div class="form-group">
                             <label>Jenis Usulan</label>
-                            <textarea name="jenis_usulan" class="form-control" placeholder="Jenis Usulan .." value="{{ $peserta->jenis_usulan }}"></textarea>
+                            <input name="jenis_usulan" class="form-control" placeholder="Jenis Usulan .." value="{{ $peserta->jenis_usulan }}"></input>
 
                              @if($errors->has('jenis_usulan'))
                                 <div class="text-danger">
@@ -181,7 +181,7 @@
 
                         <div class="form-group">
                             <label>Email</label>
-                            <textarea name="email" class="form-control" placeholder="Email .." value="{{ $peserta->email }}"></textarea>
+                            <input name="email" class="form-control" placeholder="Email .." value="{{ $peserta->email }}"></input>
 
                              @if($errors->has('email'))
                                 <div class="text-danger">
@@ -193,7 +193,7 @@
 
                         <div class="form-group">
                             <label>No. Telp</label>
-                            <textarea name="no_telp" class="form-control" placeholder="No. Telepon .." value="{{ $peserta->no_telp }}"></textarea>
+                            <input name="no_telp" class="form-control" placeholder="No. Telepon .." value="{{ $peserta->no_telp }}"></input>
 
                              @if($errors->has('no_telp'))
                                 <div class="text-danger">

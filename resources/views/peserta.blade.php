@@ -16,7 +16,7 @@
                     <a href="/usulan" class="btn btn-primary">Kembali</a>
                     <br/>
                     <br/>
-                    
+
                     <form method="post" action="/peserta/store">
 
                         {{ csrf_field() }}
@@ -209,63 +209,64 @@
                     </form>
                     <br/>
                     <br/>
-                    <table class="table table-bordered table-hover table-striped">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>NIP</th>
-                                <th>Nama</th>
-                                <th>TMT</th>
-                                <th>SK CPNS</th>
-                                <th>SK PNS</th>
-                                <th>Pangkat</th>
-                                <th>SK KP Terakhir</th>
-                                <th>Unit Kerja</th>
-                                <th>Pendidikan Terakhir</th>
-                                <th>Ijazah</th>
-                                <th>Jabatan</th>
-                                <th>Jenis Pelatihan</th>
-                                <th>Jenis Usulan Formasi</th>
-                                <th>Email</th>
-                                <th>No. Telp</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @php
-                                $no = 1;
-                            @endphp
-                            @foreach($peserta as $p)
-                            <tr>
-                                <td>{{ $no }}</td>
-                                <td>{{ $p->nip }}</td>
-                                <td>{{ $p->nama }}</td>
-                                <td>{{ $p->tmt }}</td>
-                                <td>{{ $p->sk_cpns }}</td>
-                                <td>{{ $p->sk_pns }}</td>
-                                <td>{{ $p->pangkat }}</td>
-                                <td>{{ $p->sk_kp }}</td>
-                                <td>{{ $p->unit_kerja }}</td>
-                                <td>{{ $p->pendidikan }}</td>       
-                                <td>{{ $p->ijazah }}</td>
-                                <td>{{ $p->jabatan }}</td>
-                                <td>{{ $p->jenis_pelatihan }}</td>
-                                <td>{{ $p->jenis_usulan }}</td>
-                                <td>{{ $p->email }}</td>
-                                <td>{{ $p->no_telp }}</td>
-                                <td>
-                                    <a href="/peserta/edit/{{$p->id}}" class="btn btn-warning">Edit</a>
-                                    <a href="/peserta/hapus/{{$p->id}}" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                            @php
-                                $no++;
-                            @endphp
-                            @endforeach
-                        </tbody>
-                    </table>
+
                 </div>
             </div>
         </div>
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>NIP</th>
+                    <th>Nama</th>
+                    <th>TMT</th>
+                    <th>SK CPNS</th>
+                    <th>SK PNS</th>
+                    <th>Pangkat</th>
+                    <th>SK KP Terakhir</th>
+                    <th>Unit Kerja</th>
+                    <th>Pendidikan Terakhir</th>
+                    <th>Ijazah</th>
+                    <th>Jabatan</th>
+                    <th>Jenis Pelatihan</th>
+                    <th>Jenis Usulan Formasi</th>
+                    <th>Email</th>
+                    <th>No. Telp</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @php
+                    $no = 1;
+                @endphp
+                @foreach($peserta as $p)
+                <tr>
+                    <td>{{ $no }}</td>
+                    <td>{{ $p->nip }}</td>
+                    <td>{{ $p->nama }}</td>
+                    <td>{{ $p->tmt }}</td>
+                    <td>{{ $p->sk_cpns }}</td>
+                    <td>{{ $p->sk_pns }}</td>
+                    <td>{{ $p->pangkat }}</td>
+                    <td>{{ $p->sk_kp }}</td>
+                    <td>{{ $p->unit_kerja }}</td>
+                    <td>{{ $p->pendidikan }}</td>
+                    <td>{{ $p->ijazah }}</td>
+                    <td>{{ $p->jabatan }}</td>
+                    <td>{{ $p->jenis_pelatihan }}</td>
+                    <td>{{ $p->jenis_usulan }}</td>
+                    <td>{{ $p->email }}</td>
+                    <td>{{ $p->no_telp }}</td>
+                    <td>
+                        <a href="/peserta/edit/{{$p->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/peserta/hapus/{{$p->id}}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                @php
+                    $no++;
+                @endphp
+                @endforeach
+            </tbody>
+        </table>
     </body>
 </html>
