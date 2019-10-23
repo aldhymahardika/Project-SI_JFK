@@ -11,4 +11,10 @@ class Usulan extends Model
     {
     	return $this->hasOne('App\Peserta');
     }
+    protected $fillable = [
+    	'no_surat',
+    	'tanggal',
+    	'perihal',
+    	'file_surat'
+    ];
 }

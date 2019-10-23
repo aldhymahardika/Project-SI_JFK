@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-        <title>CRUD SI-JFK</title>
+        <title>Data Usulan SI-JFK</title>
     </head>
     <body>
         <div class="container">
@@ -43,6 +43,9 @@
                                     <a href="/usulan/detail/{{ $u->id }}" class="btn btn-danger">Detail</a>
                                 </td>
                             </tr>
+                            @php
+                                $no++;
+                            @endphp
                             @endforeach
                         </tbody>
                     </table>

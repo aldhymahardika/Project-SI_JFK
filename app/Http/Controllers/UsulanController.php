@@ -14,6 +14,35 @@ class UsulanController extends Controller
     	return view('usulan', ['usulan' => $usulan]);
     }
 
+    public function usulan()
+    {
+        return view('usulan_tambah');
+    }
+
+    public function detail()
+    {
+        $usulan = Usulan::all();
+        return view('detail_usulan', ['usulan' => $usulan]);
+    }
+
+    public function simpan(Request $request)
+    {
+        $this->validate($request, [
+            'no_surat' => 'required',
+            'tanggal' => 'required',
+            'perihal' => 'required',
+            'file_surat' => 'required'
+        ]);
+
+        Usulan::create([
+            'no_surat' => $request->no_surat,
+            'tanggal' => $request->tanggal,
+            'perihal' => $request->perihal,
+            'file_surat' => $request->file_surat
+        ]);
+        return redirect('/usulan');
+    }
+
     public function tambah()
     {
     	$peserta = Peserta::all();
